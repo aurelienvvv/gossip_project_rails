@@ -7,8 +7,12 @@
 
 <p class="lead"> 
 	<% Gossip.all.each do |gossip| %>
+
 	<b>Author :</b> <%= link_to (User.find(gossip.user_id).first_name), authors_list_path(User.find(gossip.user_id).first_name) %><br>
+
   	<b>Title :</b> <%= link_to (gossip.title), gossips_list_path(gossip.title)%><br> 
+
   	<b>Content :</b> <%= gossip.content %><br><br>
+
 	<% end %> </p>
 </div>

@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
     @name = params[:user_name]
-    @gossip_rand = Gossip.all.sample
+    #@user_find = User.all.sample
     end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get 'authors/list'
-  
+
   get 'gossips/list', to: 'gossips#list'
 
   get 'welcome/:user_name', to: 'welcome#index'
