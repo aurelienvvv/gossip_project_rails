@@ -1,16 +1,19 @@
+<style>
+.card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+</style>
+
 
 	<% Gossip.all.each do |gossip| %>
-
-<%= gossip.title %><br>
-<%= gossip.content %><br>
- <a href="http://localhost:3000/gossip/<%= gossip.id %>">Gossip : <%= gossip.title %></a><br>
-    <a href="">Author : <%=  User.find(gossip.user_id).first_name %></a></p><br>
+	<div class="card">
+  <div class="card-header">
+    <%= gossip.title %><br>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= gossip.content %></h5>
+    <p class="card-text"><%= link_to "Show more",  gossip_path(gossip.id), :class => "btn btn-primary" %>
   </div>
 </div>
-
-	<% end %> </p>
-
-
-
-
+</div>
+</div>
+<% end %> </p>
 </div>
