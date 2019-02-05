@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  
-  get 'authors/list'
 
-  get 'gossips/list', to: 'gossips#list'
+  get 'author/:author_id', to: 'dynamics_pages#user'
 
-  get 'welcome/:user_name', to: 'welcome#index'
+  get '/', to: 'dynamics_pages#welcome', as: 'welcome'
 
-  get 'static_page/team', to: 'static_page#team'
+  get '/gossip/:gossip_id', to: 'dynamics_pages#gossip'
 
   get 'static_page/contact', to: 'static_page#contact'
+  
+  get 'static_page/team', to: 'static_page#team'
 
 end

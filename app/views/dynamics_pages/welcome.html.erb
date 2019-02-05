@@ -1,0 +1,16 @@
+
+	<% Gossip.all.each do |gossip| %>
+
+<%= gossip.title %><br>
+<%= gossip.content %><br>
+ <a href="http://localhost:3000/gossip/<%= gossip.id %>">Gossip : <%= gossip.title %></a><br>
+    <a href="">Author : <%=  User.find(gossip.user_id).first_name %></a></p><br>
+  </div>
+</div>
+
+	<% end %> </p>
+
+
+
+
+</div>
