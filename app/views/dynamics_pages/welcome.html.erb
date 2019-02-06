@@ -1,19 +1,3 @@
-<style>
-.card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
-</style>
-
-
-	<% Gossip.all.each do |gossip| %>
-	<div class="card">
-  <div class="card-header">
-    <%= gossip.title %><br>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= gossip.content %></h5>
-    <p class="card-text"><%= link_to "Show more",  gossip_path(gossip.id), :class => "btn btn-primary" %>
-  </div>
-</div>
-</div>
-</div>
-<% end %> </p>
-</div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	<h1 class="display-4">BIENVENUE SUR LE GOSSIP PROJECT</h1>
+      <p class="lead"><%= link_to "Créer un nouveau gossip", new_gossip_path %></p>

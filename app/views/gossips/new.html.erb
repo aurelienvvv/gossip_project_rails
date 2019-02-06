@@ -1,0 +1,13 @@
+<html> 
+<body> 
+	<!-- ... --> 
+	<div class="container col-md-8 order-md-1">
+		
+	<%= form_tag url_for(action: 'create'), method: "post" do %> 
+	<%= label_tag 'Title' %> 
+	<%= text_field_tag 'title', @title %> <br /> <br /> 
+	<%= label_tag 'Body' %> 
+	<%= text_area_tag 'body', @content %> <br /> <br /> 
+	<%= submit_tag "Create Post" %> <% end %> <!-- ... --> 
+</body> 
+</html>
