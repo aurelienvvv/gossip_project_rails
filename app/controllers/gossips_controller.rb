@@ -5,10 +5,12 @@ class GossipsController < ApplicationController
   end
 
   def show
-    @gossip = Gossip.find_by(id: params[:id])
+    @gossip = Gossip.find(params[:id])
     @author_gossip = User.find(@gossip.user_id).first_name
     @author_gossip_id = User.find(@gossip.user_id)
     @author_gossip_city = City.find(User.find(@gossip.user_id).city_id).name
+    @comments = Comment.where(gossip_id: @gossip)
+  
   end
 
   def new
@@ -26,6 +28,11 @@ class GossipsController < ApplicationController
     else
       redirect_to new_gossip_path
     end
+    
+    puts "#"*50
+    puts params['comment']
+    puts "#"*50
+
   end
 
   def edit

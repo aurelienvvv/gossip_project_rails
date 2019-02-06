@@ -27,3 +27,7 @@ GossipTag.create(gossip_id: 1,tag_id: 1)
 10.times do
   PrivateMessage.create(content: Faker::Hipster.sentence(3),sender_id:rand(1..10) ,recipient_id:rand(1..10))
 end
+
+50.times do
+  Comment.create(content: Faker::Hipster.sentence(3), user_id: User.all.sample.id, gossip_id: Gossip.all.sample.id)
+end

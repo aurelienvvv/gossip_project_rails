@@ -26,18 +26,31 @@
   <br />
     <br />
 
-<!-- Commentaire de chaque gossip : -->
+<!-- Création commentaire : -->
   <br />
-<div class="form-group">
-<%= form_tag url_for(action: 'create'), method: "post" do %>
-  <%= text_field_tag 'Comments', 'Ton commentaire ici' ,class:'form-control' %>
-</div>
-<div class="form-group">
-  <%= submit_tag 'Ajoute ton com!', class:'btn btn-light' %>
-<% end %>
+    <%= form_tag comment_path(@gossip) do %>
+      <%= label_tag 'Comment' %>
+      <%= text_area_tag 'comment' %>
+      <br /> <br />
+      <%= submit_tag 'Add Comment' %>
+    <% end %>
+
+<!-- Affichage commentaires : -->
 
 
+<div class="col-sm-5">
+  <br>
+  <% @comments.each do |comment| %>
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong><%= User.find(comment.user_id).first_name %></strong> <span class="text-muted"></span>
+<div class="panel-body">
+<%= comment.content %>
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><br>
+          <% end %>
+
 </div>
-</div>
-</div>
+
 </div> 

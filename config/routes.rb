@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :gossips
   resources :comments
 
+  resources :gossips do
+  resources :comments
+end
+
 end
