@@ -10,8 +10,33 @@
     <h5 class="card-title">Title : <%= @gossip.title %></h5>
     <h5 class="card-title">Content : <%= @gossip.content %></h5>
     <h5 class="card-title"><%= link_to "Author : #{@author_gossip}", user_path(@author_gossip_id) %></h5>
+
         <h5 class="card-title">City: <%= @author_gossip_city %></h5>
+
+
+<!-- Bouton pour editer : -->
+
         <button type="button" class="btn btn-light"><%= link_to "Edit", edit_gossip_path(@gossip.id) %></button>
+
+<!-- Bouton pour delete : -->
+
+<%= form_tag gossip_path(@gossip), method: "delete", style: "display: inline" do %>
+  <%= submit_tag "Delete", class:"btn btn-light" %>
+<% end %>
+  <br />
+    <br />
+
+<!-- Commentaire de chaque gossip : -->
+  <br />
+<div class="form-group">
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <%= text_field_tag 'Comments', 'Ton commentaire ici' ,class:'form-control' %>
+</div>
+<div class="form-group">
+  <%= submit_tag 'Ajoute ton com!', class:'btn btn-light' %>
+<% end %>
+
+
 </div>
 </div>
 </div>

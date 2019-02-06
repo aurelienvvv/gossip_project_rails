@@ -33,20 +33,23 @@ class GossipsController < ApplicationController
   end
 
   def update
-    @anonymous = User.create(first_name: "Anonymous"  ,last_name: "Anonymous" ,email:"xxxx@gmail.com" ,age: rand(15..25) ,city_id: 5)
     @gossip = Gossip.find(params[:id])
-# puts params.require(:gossip).permit(:title, :content).inspect
 
-    if @gossip.update(title: params["title"], content:params["content"], user_id: @anonymous.id)
-    redirect_to @gossip
-  else
-    render :edit
-  end
+    if @gossip.update(title: params["title"].join, content:params["content"].join, user_id: @gossip.user_id)
+      redirect_to @gossip
+    else
+      render :edit
+    end
 
   end
 
   def destroy
-    # Méthode qui récupère le potin concerné et le détruit en base
-    # Une fois la suppression faite, on redirige généralement vers la méthode index (pour afficher la liste à jour)
+    @gossip = Gossip.find(params[:id])
+
+    if @gossip.destroy
+      redirect_to gossips_path
+    else
+      redirect_to @gossip 
   end
+end
 end
