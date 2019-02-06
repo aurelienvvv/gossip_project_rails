@@ -1,5 +1,6 @@
 require 'faker'
 
+User.destroy_all
 Gossip.destroy_all
 
 10.times do
@@ -9,7 +10,7 @@ end
 10.times do
   first = Faker::Name.first_name
   last = Faker::Name.last_name
-  User.create(first_name: first  ,last_name: last ,email:"#{first}.#{last}@gmail.com" ,age: rand(15..25) ,city_id: City.all.sample.id) 
+  User.create(first_name: first  ,last_name: last ,email:"#{first}.#{last}@gmail.com" ,age: rand(15..25) ,city_id: City.all.sample.id, description: Faker::Lebowski.quote) 
 end
 
 10.times do
@@ -26,6 +27,3 @@ GossipTag.create(gossip_id: 1,tag_id: 1)
 10.times do
   PrivateMessage.create(content: Faker::Hipster.sentence(3),sender_id:rand(1..10) ,recipient_id:rand(1..10))
 end
-
-
-@anonymous = User.create(first_name: "Anonymous"  ,last_name: "Anonymous" ,email:"xxxx@gmail.com" ,age: rand(15..25) ,city_id: 5)

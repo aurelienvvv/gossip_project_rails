@@ -1,0 +1,19 @@
+<style>
+.card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+</style>
+
+	<div class="card">
+  <div class="card-header">
+    Author n° <%= @author.id %><br>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">First Name : <%= @author.first_name %></h5>
+    <h5 class="card-title">Last Name : <%= @author.last_name %></h5>
+    <h5 class="card-title">Age : <%= @author.age %></h5>
+    <h5 class="card-title">City : <%= link_to @author_city, city_path(@author_city_id) %></h5>
+    <h5 class="card-title">Email : <%= @author.email %></h5>
+    <h5 class="card-title">Description : <%= @author.description %></h5>
+</div>
+</div>
+</div>
+</div>

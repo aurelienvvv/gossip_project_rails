@@ -1,0 +1,22 @@
+<style>
+.card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+</style>
+
+	<div class="card">
+  <div class="card-header">
+    City Name : <%= @city.name %><br>
+  </div>
+  <div class="card-body">
+    All Gossips of the city :
+    <% @city_user.each do |user| %></h5>
+    <h5 class="card-title">
+            <% Gossip.where(user_id: user.id).each do |gossip| %>
+            <%= gossip.content %><br><br>
+            <% end %>
+            
+                  <% end %>
+    <h5 class="card-title"></h5>
+</div>
+</div>
+</div>
+</div>

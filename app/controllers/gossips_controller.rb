@@ -8,10 +8,10 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find_by(id: params[:id])
     @author_gossip = User.find(@gossip.user_id).first_name
     @author_gossip_id = User.find(@gossip.user_id)
+    @author_gossip_city = City.find(User.find(@gossip.user_id).city_id).name
   end
 
   def new
-    # Méthode qui crée un potin vide et l'envoie une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
   end
 
   def create
@@ -29,13 +29,20 @@ class GossipsController < ApplicationController
   end
 
   def edit
-    # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition
+    @gossip = Gossip.find(params[:id])
   end
 
   def update
-    # Méthode qui met à jour le potin à partir du contenu du formulaire de edit.html.erb, soumis par l'utilisateur
-    # pour info, le contenu de ce formulaire sera accessible dans le hash params
-    # Une fois la modification faite, on redirige généralement vers la méthode show (pour afficher le potin modifié)
+    @anonymous = User.create(first_name: "Anonymous"  ,last_name: "Anonymous" ,email:"xxxx@gmail.com" ,age: rand(15..25) ,city_id: 5)
+    @gossip = Gossip.find(params[:id])
+# puts params.require(:gossip).permit(:title, :content).inspect
+
+    if @gossip.update(title: params["title"], content:params["content"], user_id: @anonymous.id)
+    redirect_to @gossip
+  else
+    render :edit
+  end
+
   end
 
   def destroy
