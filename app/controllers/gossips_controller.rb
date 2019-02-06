@@ -18,7 +18,8 @@ class GossipsController < ApplicationController
     @new_gossip = Gossip.new
     @new_gossip.title = params['title']
     @new_gossip.content = params['body']
-    @new_gossip.user_id = 121
+    @anonymous = User.create(first_name: "Anonymous"  ,last_name: "Anonymous" ,email:"xxxx@gmail.com" ,age: rand(15..25) ,city_id: 5)
+    @new_gossip.user_id = @anonymous.id
 
     if @new_gossip.save
       redirect_to gossip_path(@new_gossip.id)

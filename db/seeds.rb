@@ -26,3 +26,6 @@ GossipTag.create(gossip_id: 1,tag_id: 1)
 10.times do
   PrivateMessage.create(content: Faker::Hipster.sentence(3),sender_id:rand(1..10) ,recipient_id:rand(1..10))
 end
+
+
+@anonymous = User.create(first_name: "Anonymous"  ,last_name: "Anonymous" ,email:"xxxx@gmail.com" ,age: rand(15..25) ,city_id: 5)
