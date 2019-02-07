@@ -1,24 +1,23 @@
-# README
+# GossipProjectSite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projet réalisé par Nicolas Lucchetta et Aurélien Verschueren :v:
 
-Things you may want to cover:
+## Dispo sur Heroku : 
 
-* Ruby version
 
-* System dependencies
+https://gossippp.herokuapp.com/
 
-* Configuration
+## Installation du repo
 
-* Database creation
+`$ bundle install`
 
-* Database initialization
+`$ rails db:create`
 
-* How to run the test suite
+`$ rails db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
+`$ rails s`
 
-* Deployment instructions
+puis : http://localhost:3000/
 
-* ...
+
+À Bientôt :relaxed:
