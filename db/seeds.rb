@@ -11,7 +11,7 @@ end
 end
 
 10.times do
-  Gossip.create(title: Faker::GreekPhilosophers.name ,content:Faker::GreekPhilosophers.quote ,user_id: User.all.sample.id)
+  Gossip.create(title: Faker::GreekPhilosophers.name ,content:Faker::GreekPhilosophers.quote ,user_id: rand(1..10))
 end
 
 
