@@ -1,12 +1,33 @@
 <style>
 .card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+.titre{margin-left: 20%; }
 </style>
+
+<div class="titre">
+	<br>
+ <div class="col-md-8 col-md-offset-8">
+	<h1 class="display-4">TOUS LES GOSSIPS </h1>
+      <p class="lead">Admire tous les gossips de ta région (et du monde) ici ! <i class="em em-heart_eyes"></i>
+       <br><%= link_to "Toi aussi créé ton gossip", new_gossip_path %></i><br>
+      	
+
+</div></p></div></div>
+      </div>
 
 
 	<% Gossip.all.each do |gossip| %>
 	<div class="card">
   <div class="card-header">
-    <%= gossip.title %><br>
+    <%= gossip.title %> 
+    <% if gossip.id % 3 == 0 %> 
+    <i class="em em-zany_face"></i>
+    <% elsif gossip.id % 5 == 0 %> 
+    <i class="em em-nerd_face"></i>
+    <% elsif gossip.id % 4 == 0 %> 
+    <i class="em em-shushing_face"></i>
+    <% else %>
+    <i class="em em-robot_face"></i>
+    <% end %>
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= gossip.content %></h5>

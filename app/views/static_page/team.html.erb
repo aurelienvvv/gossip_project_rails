@@ -1,11 +1,16 @@
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"><h1 class="display-4">Page équipe</h1>
-</br>
-</br>
+<style>
+.row{margin-left: 20%; margin-top: 9%;}
+
+</style>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-8">
+	<h1 class="display-4">QUI SOMMES NOUS ? </h1><br>
+      <p class="lead">Hello nous sommes <b>Nicolas et Aurélien </b>les créateurs de <br>The Gossip Project ! <i class="em em-call_me_hand"></i><br><br><br> <b>Voici notre biographie en latin :</b> <br> <br><%= Faker::Lorem.paragraph(10, false, 4) %>
+
+      	<blockquote class="blockquote">
+  <footer class="blockquote-footer">Nicolas <cite title="Source Title">Lorem ipsum gossipum hackingus</cite></footer></blockquote>
 
 
-<p class="lead">Hello nous sommes <b>Nicolas, Boris et Aurélien </b>les créateurs de The Gossip Project !</p>
-
-<p class="lead">Notre gossip favoris c'est :<b> <%= @gossip1.content %><b></p>
-
-	<p class="lead">À plus !</p>
-</div>
+      </div>
+  </div>
