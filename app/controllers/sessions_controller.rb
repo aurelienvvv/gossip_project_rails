@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params['password'])
     session[:user_id] = user.id
-    redirect_to new_gossip_path
 
     else
       flash.now[:danger] = 'Invalid email/password combination'

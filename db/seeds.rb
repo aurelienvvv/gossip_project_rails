@@ -11,7 +11,7 @@ end
 end
 
 10.times do
-  Gossip.create(title: Faker::GreekPhilosophers.name ,content:Faker::GreekPhilosophers.quote ,user_id: rand(1..10))
+  Gossip.create(title: Faker::GreekPhilosophers.name ,content:Faker::GreekPhilosophers.quote ,user_id: User.all.sample.id)
 end
 
 
@@ -26,5 +26,5 @@ GossipTag.create(gossip_id: 1,tag_id: 1)
 end
 
 50.times do
-  Comm.create(content: Faker::Hipster.sentence(3), user_id: User.all.sample.id, gossip_id: rand(1..10))
+  Comm.create(content: Faker::Hipster.sentence(3), user_id: User.all.sample.id, gossip_id: Gossip.all.sample.id)
 end
