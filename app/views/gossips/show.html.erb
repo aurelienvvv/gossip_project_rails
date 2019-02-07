@@ -8,9 +8,8 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Titre : <%= @gossip.title %></h5>
-    <h5 class="card-title">Contenu du gossip : <%= @gossip.content %></h5>
-    <h5 class="card-title"><%= link_to "Author : #{@author_gossip}", user_path(@author_gossip_id) %></h5>
-
+    <h5 class="card-title"><%= @gossip.content %></h5>
+    <h5 class="card-title"><%= link_to "Gossipeur : #{@author_gossip}", user_path(@author_gossip_id) %></h5>
         <h5 class="card-title">Ville: <%= @author_gossip_city %></h5>
 
 
@@ -25,9 +24,10 @@
 <%= form_tag gossip_path(@gossip), method: "delete", style: "display: inline" do %>
   <%= submit_tag "Supprime ton gossip", class:"btn btn-light" %>
 <% end %>
-        <% end %>
   <br />
     <br />
+        <% end %>
+
 
 <!-- Création commentaire : -->
 

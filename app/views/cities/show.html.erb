@@ -1,13 +1,23 @@
-<style>
+<<style>
 .card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+.titre{margin-left: 20%; }
 </style>
 
+<div class="titre">
+  <br>
+ <div class="col-md-8 col-md-offset-8">
+  <h1 class="display-4">TOUS LES GOSSIPS <br>DE <b><%= @city.name.upcase %></b> </h1>
+      <p class="lead">Admire tous les gossips de la ville de <%= @city.name %> ici ! <i class="em em-heart_eyes"></i>
+       <br><%= link_to "Toi aussi créé ton gossip", new_gossip_path %></i><br>
+        
+
+</div></p></div></div>
 	<div class="card">
   <div class="card-header">
-    City Name : <%= @city.name %><br>
+    <%= @city.name %><br>
   </div>
   <div class="card-body">
-    All Gossips of the city :
+
     <% @city_user.each do |user| %></h5>
     <h5 class="card-title">
             <% Gossip.where(user_id: user.id).each do |gossip| %>
