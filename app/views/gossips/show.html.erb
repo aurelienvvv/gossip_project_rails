@@ -15,14 +15,17 @@
 
 
 <!-- Bouton pour editer : -->
-
+<% if session[:user_id] == @gossip_user %>
         <button type="button" class="btn btn-light"><%= link_to "Edit", edit_gossip_path(@gossip.id) %></button>
+        <% end %>
 
 <!-- Bouton pour delete : -->
 
+<% if session[:user_id] == @gossip_user %>
 <%= form_tag gossip_path(@gossip), method: "delete", style: "display: inline" do %>
   <%= submit_tag "Delete", class:"btn btn-light" %>
 <% end %>
+        <% end %>
   <br />
     <br />
 

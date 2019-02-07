@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :gossips
   resources :comments
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :gossips do
   resources :comments
