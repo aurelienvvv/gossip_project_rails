@@ -1,8 +1,5 @@
 require 'faker'
 
-User.destroy_all
-Gossip.destroy_all
-
 10.times do
   City.create(name: Faker::Address.city, postal_code: Faker::Address.zip)
 end
