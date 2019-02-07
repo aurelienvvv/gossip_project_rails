@@ -27,12 +27,13 @@
     <br />
 
 <!-- Création commentaire : -->
+
   <br />
     <%= form_tag comment_path(@gossip) do %>
       <%= label_tag 'Comment' %>
-      <%= text_area_tag 'comment' %>
+      <%= text_area_tag 'comment',@content, class:'form-control' %>
       <br /> <br />
-      <%= submit_tag 'Add Comment' %>
+      <%= submit_tag 'Add Comment', class:"btn btn-light"%>
     <% end %>
 
 <!-- Affichage commentaires : -->

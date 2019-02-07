@@ -29,5 +29,5 @@ GossipTag.create(gossip_id: 1,tag_id: 1)
 end
 
 50.times do
-  Comment.create(content: Faker::Hipster.sentence(3), user_id: User.all.sample.id, gossip_id: Gossip.all.sample.id)
+  Comm.create(content: Faker::Hipster.sentence(3), user_id: User.all.sample.id, gossip_id: Gossip.all.sample.id)
 end

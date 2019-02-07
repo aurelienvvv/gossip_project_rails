@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_06_191144) do
+ActiveRecord::Schema.define(version: 2019_02_06_215205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,15 +20,14 @@ ActiveRecord::Schema.define(version: 2019_02_06_191144) do
     t.integer "postal_code"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comms", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "gossip_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "commentable_id"
-    t.index ["gossip_id"], name: "index_comments_on_gossip_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["gossip_id"], name: "index_comms_on_gossip_id"
+    t.index ["user_id"], name: "index_comms_on_user_id"
   end
 
   create_table "gossip_tags", force: :cascade do |t|
