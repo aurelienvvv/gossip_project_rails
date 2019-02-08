@@ -9,7 +9,7 @@ end
 10.times do
   first = Faker::Name.first_name
   last = Faker::Name.last_name
-  User.create(first_name: first  ,last_name: last ,email:"#{first}.#{last}@gmail.com" ,age: rand(15..25) ,city_id: City.all.sample.id, description: Faker::Lebowski.quote) 
+  User.create(first_name: first  ,last_name: last ,email:"#{first}.#{last}@gmail.com" ,age: rand(15..25) ,city_id: City.all.sample.id, description: Faker::Lebowski.quote, password: Faker::Internet.password) 
 end
 
 10.times do
