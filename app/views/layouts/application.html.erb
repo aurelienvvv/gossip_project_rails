@@ -27,12 +27,12 @@
         <%= link_to'Team', static_page_team_path, class:"btn btn-light" %>
         <%= link_to'Gossips', gossips_path, class:"btn btn-light" %>
 
-         <% if session[:user_id].nil? %>
+         <% if cookies.signed.encrypted[:user_id].nil? %>
 
         <%= link_to "Se Connecter", new_session_path, class:"btn btn-light" %>
         <% end %>
         
-      <% if session[:user_id] %>
+      <% if cookies.signed.encrypted[:user_id] %>
         <%= link_to "Se déconnecter", session_path(session), method: :delete, class:"btn btn-light" %>
         <% end %>
 
@@ -40,8 +40,8 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center"><br>
-      <p><% if session[:user_id] %></p>
-      <p class="float-right">Gossipeur <%= User.find_by(id:session[:user_id]).first_name %> <i class="em em-cat"></i> </p>
+      <p><% if cookies.signed.encrypted[:user_id] %></p>
+      <p class="float-right">Gossipeur <%= User.find_by(id:cookies.signed.encrypted[:user_id]).first_name %> <i class="em em-cat"></i> </p>
       <% end %>
       <h1 class="display-4"></h1>
       <p class="lead"></p>

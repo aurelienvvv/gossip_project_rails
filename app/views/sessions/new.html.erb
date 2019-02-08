@@ -1,6 +1,10 @@
 <html> 
 <body> 
 	<!-- ... --> 
+	<% if flash.now[:danger] %>
+			<div class="alert alert-danger" role="alert">
+  <%= flash.now[:danger] %>
+</div><% end %>
 	<div class="container col-md-8 order-md-1">
 		<div class="form-group">
 			<h3> Connecte toi au réseau de Gossipeurs !   <i class="em em-clinking_glasses"></i></h3>
@@ -11,7 +15,8 @@
 
 	<%= label_tag 'Mot de passe :' %> 
 	<%= password_field_tag 'password', @pass, class:'form-control' %> <br /> 
-		<p> Tu n'as pas de compte ? Pas de panique tu peux <%= link_to "créer un compte ici", new_user_path %>  </p>
+		<p> Tu n'as pas de compte ? Pas de panique tu peux <%= link_to "créer un compte ici", new_user_path %> 
+		  </p>
 		<%= submit_tag "Connexion", class:"btn btn-light" %> <% end %>
 </div>
 	

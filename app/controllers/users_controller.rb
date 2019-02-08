@@ -16,20 +16,23 @@ class UsersController < ApplicationController
 
   def create
     @create_city = City.create(name: params['city'], postal_code: 93150)
-    @new_user = User.new
-    @new_user.first_name = params['first_name']
-    @new_user.last_name = params['last_name']
-    @new_user.age = params['age']
-    @new_user.email = params['email']
-    @new_user.city_id = @create_city.id
-    @new_user.password = params['password']
-    @new_user.password_confirmation = params['password_confirm']
+    user = User.new
+    user.first_name = params['first_name']
+    user.last_name = params['last_name']
+    user.age = params['age']
+    user.email = params['email']
+    user.city_id = @create_city.id
+    user.password = params['password']
+    user.password_confirmation = params['password_confirm']
 
-    if @new_user.save
-      redirect_to user_path(@new_user.id)
+    if user.save
+      cookies.signed.encrypted[:user_id] = {value: user.id, expires: 1.day.from_now}
+      redirect_to welcome_path
+
     else
       redirect_to new_user_path
     end
+    
   end
 
   def edit
