@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 2019_02_07_174055) do
     t.string "last_name"
     t.string "email"
     t.integer "age"
-    t.bigint "city_id"
     t.text "description"
+    t.bigint "city_id"
     t.string "password_digest"
     t.index ["city_id"], name: "index_users_on_city_id"
   end
