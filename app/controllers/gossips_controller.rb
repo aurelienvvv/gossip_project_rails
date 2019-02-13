@@ -11,6 +11,7 @@ class GossipsController < ApplicationController
     @author_gossip_id = User.find(@gossip.user_id)
     @author_gossip_city = City.find(User.find(@gossip.user_id).city_id).name
     @comments = Comm.where(gossip_id: @gossip)
+    session[:receip] = Gossip.find(params[:id]).user_id
   
   end
 

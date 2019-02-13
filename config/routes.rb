@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :users
   resources :gossips
   resources :comments
+  resources :conversations
   resources :sessions, only: [:new, :create, :destroy]
+  resources :private_messages, only: [:show, :new, :create, :destroy, :edit]
 
   resources :gossips do
   resources :comments

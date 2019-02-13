@@ -1,0 +1,11 @@
+<style>
+.card{margin-left: 200px; margin-right: 200px; margin-top: 50px;}
+</style>
+
+<%= form_tag url_for(action: 'create'), method: "post" do %> 
+	<%= label_tag 'Envoi un message' %> 
+
+
+	<%= text_area_tag 'message', @message, class:'form-control' %> <br />
+
+	<%= submit_tag "Envoyer", class:"btn btn-light" %> <% end %>

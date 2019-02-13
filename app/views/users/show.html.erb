@@ -13,6 +13,11 @@
     <h5 class="card-title">City : <%= link_to @author_city, city_path(@author_city_id) %></h5>
     <h5 class="card-title">Email : <%= @author.email %></h5>
     <h5 class="card-title">Description : <%= @author.description %></h5>
+
+
+    <h5 class="card-title"><%= link_to "Envoyer un message", new_private_message_path , class:"btn btn-light" %></h5>
+
+
 </div>
 </div>
 </div>
